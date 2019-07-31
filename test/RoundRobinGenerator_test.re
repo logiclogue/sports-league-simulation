@@ -1,4 +1,4 @@
-open Helpers;
+open BsHelpers;
 open Mocha;
 open Chai;
 open RoundRobinGenerator;
