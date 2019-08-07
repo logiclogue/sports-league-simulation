@@ -17,6 +17,5 @@
     "error" : "+101"
   },
   "refmt": 3,
-  "namespace": true,
   "bsc-flags": ["-bs-cross-module-opt"]
 }
