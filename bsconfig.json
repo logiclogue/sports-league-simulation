@@ -5,6 +5,10 @@
     {
         "dir" : "src",
         "subdirs" : true
+    },
+    {
+        "dir" : "test",
+        "subdirs" : true
     }
   ],
   "package-specs": {
@@ -12,7 +16,7 @@
     "in-source": true
   },
   "suffix": ".bs.js",
-  "bs-dependencies": ["bs-helpers", "bs-css"],
+  "bs-dependencies": ["bs-helpers"],
   "warnings": {
     "error" : "+101"
   },
