@@ -16,4 +16,14 @@ describe("RoundRobinGenerator", () => {
             expect(generate(teams))->t->deep->equal([]);
         });
     });
+
+    context("given 2 teams", () => {
+        it("returns 1 fixture", () => {
+            let teams = [Stubs.derby, Stubs.forest];
+
+            let fixture = (Stubs.derby, Stubs.forest);
+
+            expect(generate(teams))->t->deep->equal([fixture]);
+        });
+    });
 });
