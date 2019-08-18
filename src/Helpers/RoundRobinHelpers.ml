@@ -13,7 +13,10 @@ let split xs =
     ListHelpers.take half xs, ListHelpers.drop half xs
 
 let equalise (xs, ys) =
-    List.map (fun x -> Some x) xs, List.map (fun x -> Some x) ys
+    let f = OptionHelpers.map (fun x -> x) in
+
+    ListHelpers.complete_zip f (xs, ys)
+        |> ListHelpers.unzip
 
 let zip_opt x_opts y_opts =
     []
