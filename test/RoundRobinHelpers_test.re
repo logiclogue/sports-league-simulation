@@ -54,7 +54,7 @@ describe("RoundRobinHelpers", () => {
 
         context("given [1, 2], [1]", () => {
             it("returns [Some 1, Some 2], [Some 1, None]", () => {
-                let result = equalise(([1], [1]));
+                let result = equalise(([1, 2], [1]));
 
                 let expected_left = [Some(1), Some(2)];
                 let expected_right = [Some(1), None];
