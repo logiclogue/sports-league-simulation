@@ -63,4 +63,17 @@ describe("RoundRobinHelpers", () => {
             });
         });
     });
+
+    describe("zip_opt", () => {
+        context("given [Some 1, None] and [Some 2, Some 42]", () => {
+            let input_left = [Some(1), None];
+            let input_right = [Some(2), Some(42)];
+
+            it("returns [(1, 2)]", () => {
+                let result = zip_opt(input_left, input_right);
+
+                expect(result)->t->deep->equal([(1, 2)]);
+            });
+        });
+    });
 });
