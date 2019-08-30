@@ -10,7 +10,7 @@ let equalise (xs, ys) =
     ListHelpers.complete_zip f (xs, ys)
         |> ListHelpers.unzip
 
-let fold_f_zip_opt x_opt xs =
+let fold_f_zip_opt xs x_opt =
     match x_opt with
     | Some x -> x :: xs
     | None   -> xs
@@ -24,7 +24,7 @@ let opt_opt_to_opt (x_opt, y_opt) =
 let zip_opt x_opts y_opts =
     ListHelpers.zip x_opts y_opts
         |> List.map opt_opt_to_opt
-        |> List.fold_left fold_f_zip_opt []
+        |> List.fold_left [] fold_f_zip_opt
 
 let rotate xs =
     []
