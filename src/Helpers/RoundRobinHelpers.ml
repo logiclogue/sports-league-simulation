@@ -24,7 +24,7 @@ let opt_opt_to_opt (x_opt, y_opt) =
 let zip_opt x_opts y_opts =
     ListHelpers.zip x_opts y_opts
         |> List.map opt_opt_to_opt
-        |> List.fold_left [] fold_f_zip_opt
+        |> List.fold_left fold_f_zip_opt []
 
 let rotate xs =
     []
