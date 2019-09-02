@@ -26,7 +26,12 @@ let zip_opt x_opts y_opts =
         |> List.map opt_opt_to_opt
         |> List.fold_left fold_f_zip_opt []
 
+let true_rotate xs =
+    match xs with
+    | x :: xs -> xs <> [x]
+    | []      -> []
+
 let rotate xs =
     match xs with
-    | x :: xs' -> xs' ++ [x]
-    | [] -> xs
+    | x :: xs -> x :: true_rotate xs
+    | []      -> []
