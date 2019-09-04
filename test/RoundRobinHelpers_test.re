@@ -76,4 +76,38 @@ describe("RoundRobinHelpers", () => {
             });
         });
     });
+
+    describe("rotate", () => {
+        context("given []", () => {
+            let result = rotate([]);
+
+            it("returns []", () => {
+                expect(result)->t->deep->equal([]);
+            });
+        });
+
+        context("given [1]", () => {
+            let result = rotate([1]);
+
+            it("returns [1]", () => {
+                expect(result)->t->deep->equal([1]);
+            });
+        });
+
+        context("given [1, 2]", () => {
+            let result = rotate([1, 2]);
+
+            it("returns [1, 2]", () => {
+                expect(result)->t->deep->equal([1, 2]);
+            });
+        });
+
+        context("given [1, 2, 3]", () => {
+            let result = rotate([1, 2, 3]);
+
+            it("returns [1, 3, 2]", () => {
+                expect(result)->t->deep->equal([1, 3, 2]);
+            });
+        });
+    });
 });
