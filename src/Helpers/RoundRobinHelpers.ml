@@ -23,12 +23,21 @@ let opt_opt_to_opt (x_opt, y_opt) =
 
 let zip_opt x_opts y_opts =
     ListHelpers.zip x_opts y_opts
+        |> OptionHelpers.fold_default []
         |> List.map opt_opt_to_opt
         |> List.fold_left fold_f_zip_opt []
 
+(*
+zip_opt                  : 'a option list -> 'b option list -> ('a * 'a) list
+ListHelpers.zip          : 'a option list -> 'b option list -> ('a option * 'b option) list option
+ListHelpers.fold_default : ('a option * 'b option) list -> ('a option * 'b option) list option -> ('a option * 'b option) list
+List.map                 : (('a option * 'b option) -> ('a * 'b) option) -> ('a option * 'b option) list -> ('a * 'b) option list
+List.fold_left           : (('a * 'b) list -> ('a * 'b) option -> ('a * 'b) list) -> ('a * 'b) list -> ('a * 'b) option list -> ('a * 'b) list
+*)
+
 let true_rotate xs =
     match xs with
-    | x :: xs -> xs <> [x]
+    | x :: xs -> List.append xs [x]
     | []      -> []
 
 let rotate xs =
