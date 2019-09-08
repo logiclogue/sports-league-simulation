@@ -10,6 +10,12 @@ let equalise (xs, ys) =
     ListHelpers.complete_zip f (xs, ys)
         |> ListHelpers.unzip
 
+let equalise xs =
+    if List.length xs mod 2 == 1 then
+        List.fold_left (fun xs x -> Some x :: xs) [None] xs
+    else
+        List.map (fun x -> Some x) xs
+
 let fold_f_zip_opt xs x_opt =
     match x_opt with
     | Some x -> x :: xs

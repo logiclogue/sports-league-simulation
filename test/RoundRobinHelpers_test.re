@@ -36,30 +36,27 @@ describe("RoundRobinHelpers", () => {
     });
 
     describe("equalise", () => {
-        context("given [], []", () => {
-            it("returns [], []", () => {
-                let result = equalise(([], []));
+        context("given []", () => {
+            it("returns []", () => {
+                let result = equalise([]);
 
-                expect(result)->t->deep->equal(([], []));
+                expect(result)->t->deep->equal([]);
             });
         });
 
-        context("given [1], [1]", () => {
-            it("returns [Some 1], [Some 1]", () => {
-                let result = equalise(([1], [1]));
+        context("given [1]", () => {
+            it("returns [Some 1, None]", () => {
+                let result = equalise([1]);
 
-                expect(result)->t->deep->equal(([Some(1)], [Some(1)]));
+                expect(result)->t->deep->equal([Some(1), None]);
             });
         });
 
-        context("given [1, 2], [1]", () => {
-            it("returns [Some 1, Some 2], [Some 1, None]", () => {
-                let result = equalise(([1, 2], [1]));
+        context("given [1, 2]", () => {
+            it("returns [Some 1, Some 2]", () => {
+                let result = equalise([1, 2]);
 
-                let expected_left = [Some(1), Some(2)];
-                let expected_right = [Some(1), None];
-
-                expect(result)->t->deep->equal((expected_left, expected_right));
+                expect(result)->t->deep->equal([Some(1), Some(2)]);
             });
         });
     });

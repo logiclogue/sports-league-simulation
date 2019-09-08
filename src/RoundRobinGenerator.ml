@@ -6,6 +6,11 @@ let iterate team_list =
     split team_list
         |> FunctionHelpers.uncurry zip_opt
 
+let iterate_n n team_list =
+    let new_teams = FunctionHelpers.reapply RoundRobinHelpers.rotate n in
+
+    (team_list, [])
+
 (*let generate_fold_f rounds teams rounds =
     
 
