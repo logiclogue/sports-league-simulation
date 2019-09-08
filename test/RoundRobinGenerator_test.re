@@ -31,7 +31,7 @@ describe("RoundRobinGenerator", () => {
 
     describe("iterate", () => {
         context("given 2 teams", () => {
-            let teams = [Stubs.derby, Stubs.forest];
+            let teams = [Some(Stubs.derby), Some(Stubs.forest)];
             let fixtures = [(Stubs.derby, Stubs.forest)];
 
             let result = iterate(teams);
@@ -42,22 +42,58 @@ describe("RoundRobinGenerator", () => {
         });
 
         context("given 3 teams", () => {
-            let teams = [Stubs.derby, Stubs.forest, Stubs.leicester];
-            let fixtures = [(Stubs.derby, Stubs.leicester)];
+            let teams = [
+                Some(Stubs.derby),
+                Some(Stubs.forest),
+                Some(Stubs.leicester),
+                None
+            ];
 
-            let result = iterate(teams);
+            context("no rotations", () => {
+                let fixtures = [(Stubs.derby, Stubs.leicester)];
 
-            it("returns 1 fixture", () => {
-                expect(result)->t->deep->equal(fixtures);
+                let result = iterate(teams);
+
+                it("returns derby vs leicester", () => {
+                    expect(result)->t->deep->equal(fixtures);
+                });
+            });
+
+            context("1 rotation", () => {
+                let teams = RoundRobinHelpers.rotate(teams);
+
+                let fixtures = [(Stubs.leicester, Stubs.forest)];
+
+                let result = iterate(teams);
+
+                it("returns leicester vs forest", () => {
+                    expect(result)->t->deep->equal(fixtures);
+                });
+            });
+
+            context("2 rotation", () => {
+                let teams = FunctionHelpers.reapply(
+                    RoundRobinHelpers.rotate,
+                    2,
+                    teams
+                );
+
+                let fixtures = [(Stubs.derby, Stubs.forest)];
+
+                let result = iterate(teams);
+
+                it("returns derby vs forest", () => {
+                    expect(result)->t->deep->equal(fixtures);
+                });
             });
         });
 
         context("given 4 teams", () => {
             let teams = [
-                Stubs.derby,
-                Stubs.forest,
-                Stubs.leicester,
-                Stubs.man_united
+                Some(Stubs.derby),
+                Some(Stubs.forest),
+                Some(Stubs.leicester),
+                Some(Stubs.man_united)
             ];
 
             context("no rotations", () => {
@@ -68,7 +104,7 @@ describe("RoundRobinGenerator", () => {
 
                 let result = iterate(teams);
 
-                it("returns 2 fixtures", () => {
+                it("returns expected 2 fixtures", () => {
                     expect(result)->t->deep->equal(fixtures);
                 });
             });
@@ -83,7 +119,7 @@ describe("RoundRobinGenerator", () => {
 
                 let result = iterate(teams);
 
-                it("returns 2 fixtures", () => {
+                it("returns expected 2 fixtures", () => {
                     expect(result)->t->deep->equal(fixtures);
                 });
             });
@@ -102,7 +138,7 @@ describe("RoundRobinGenerator", () => {
 
                 let result = iterate(teams);
 
-                it("returns 2 fixtures", () => {
+                it("returns expected 2 fixtures", () => {
                     expect(result)->t->deep->equal(fixtures);
                 });
             });

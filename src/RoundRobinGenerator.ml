@@ -4,7 +4,6 @@ type t = FixtureListGenerator.t
 
 let iterate team_list =
     split team_list
-        |> equalise
         |> FunctionHelpers.uncurry zip_opt
 
 (*let generate_fold_f rounds teams rounds =
@@ -17,4 +16,4 @@ let number_of_matches teams_count =
     triangle_number (teams_count - 1)*)
 
 let generate team_list =
-    [iterate team_list]
+    []
