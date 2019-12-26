@@ -17,3 +17,7 @@ The system will work off the Elo Chess rating system.
 The system will be able to apply to any generic game. Each game will be defined
 as a specific result (win/loss) to draw ratio. For example, in Chess you have
 far more draws than in Football.
+
+## Journal
+
+- [Journal](./journal.md)
