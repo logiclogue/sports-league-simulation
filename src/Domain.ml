@@ -1,5 +1,6 @@
 type rating = int
 type rating_change = int
+type seed = string
 
 type team_name = string
 type team = team_name * rating

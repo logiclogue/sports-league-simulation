@@ -68,3 +68,8 @@ val parse : jsonDocument -> (state * parseErrorCode) either
 
 This should be thought of until the end, along with command line arguments. The
 main goal is to get a bare-bones system working and then flesh out the rest.
+
+## Updating the domain
+
+Now it's time to further update the domain from what has just been specified.
+The new domain will take into account the `seed` and state.
