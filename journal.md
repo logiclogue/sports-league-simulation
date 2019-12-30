@@ -73,3 +73,5 @@ main goal is to get a bare-bones system working and then flesh out the rest.
 
 Now it's time to further update the domain from what has just been specified.
 The new domain will take into account the `seed` and state.
+
+Generating fixture lists needs to be part of the domain.
