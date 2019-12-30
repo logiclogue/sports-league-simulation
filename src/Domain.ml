@@ -8,9 +8,10 @@ type team_get_rating = team -> rating
 type find_team = team_name -> team
 
 type fixture = team_name * team_name
+type round = fixture list
 
 type result = Win | Draw | Loss
 
 type outcome = result * rating_change
 
-type simulate_fixture = fixture -> outcome
+type simulate_fixture = fixture -> (outcome * outcome)
