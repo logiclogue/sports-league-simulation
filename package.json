@@ -10,7 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "bs-helpers": "^1.0.6",
-    "bs-platform": "^5.0.7"
+    "bs-platform": "^5.2.1"
   },
   "devDependencies": {
     "chai": "^4.2.0"

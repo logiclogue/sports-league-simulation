@@ -75,3 +75,61 @@ Now it's time to further update the domain from what has just been specified.
 The new domain will take into account the `seed` and state.
 
 Generating fixture lists needs to be part of the domain.
+
+# 3 January 2020
+
+It's time to start implementing the domain.
+
+I think there should be a main state, which will be quite closely mapped to the
+JSON definition.
+
+## JSON text file format
+
+```
+{
+    "seed": string,
+    "fixed_ratings": bool (default false),
+    "rating_k_factor": int (default 32),
+    "teams": [{
+        team_name: string,
+        rating: int,
+        user_controlled: bool (default false)
+    }],
+    "results": [{
+        home_team: string,
+        home_result: int,
+        away_result: int,
+        away_team: string
+    }]
+}
+```
+
+## State
+
+```
+{
+    seed: string
+    fixed_ratings: bool
+    rating_k_factor: int
+    teams: [{
+        team_name: string
+        rating: int
+        user_controlled: bool
+    }]
+    results: [{
+        home_team: string
+        home_result: int
+        away_result: int
+        away_team: string
+    }]
+}
+```
+
+This will also require the team and result entities.
+
+Added the `State.ml` file.
+
+Need to install bsb now.
+
+That is installed, the next step it to start thinking about how the state will
+be updated.

@@ -14,7 +14,7 @@ type generate_fixture_list = seed * teams -> round list
 
 type result = Win | Draw | Loss
 
-type outcome = result * rating_change
+type outcome = fixture * result * rating_change
 
 type simulate_round = round -> (fixture * (outcome * outcome)) list
 type simulate_fixture = fixture -> (outcome * outcome)
