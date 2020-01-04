@@ -133,3 +133,13 @@ Need to install bsb now.
 
 That is installed, the next step it to start thinking about how the state will
 be updated.
+
+# 4 January 2020
+
+I think, instead of going to write the core part of the code. The best idea
+would be to get something which reads in a text file first before trying to do
+any of the logic. This way I have a basic application.
+
+The first step is having `mail.ml` and having it compile and run hello world.
+
+Issue with the domain while compiling.

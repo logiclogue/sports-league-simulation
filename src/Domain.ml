@@ -6,6 +6,7 @@ type team_name = string
 type team = team_name * rating
 type team_get_rating = team -> rating
 type find_team = team_name -> team
+type teams = team list
 
 type fixture = team_name * team_name
 type round = fixture list
