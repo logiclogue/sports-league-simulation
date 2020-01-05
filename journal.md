@@ -147,3 +147,6 @@ Issue with the domain while compiling.
 The works by typing `node src/mail.bs.js`.
 
 # 5 January 2020
+
+Successfully parses `name` field in `package.json`. Update this so that it
+parses my own json file.
