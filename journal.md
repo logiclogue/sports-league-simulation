@@ -145,3 +145,5 @@ The first step is having `mail.ml` and having it compile and run hello world.
 Issue with the domain while compiling.
 
 The works by typing `node src/mail.bs.js`.
+
+# 5 January 2020
