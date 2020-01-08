@@ -150,3 +150,9 @@ The works by typing `node src/mail.bs.js`.
 
 Successfully parses `name` field in `package.json`. Update this so that it
 parses my own json file.
+
+# 8 January 2020
+
+Switch to using standard OCaml with the Jane Street Core library. Reason for
+this is poor standard library in Bucklescript and application is command line
+anyway.
