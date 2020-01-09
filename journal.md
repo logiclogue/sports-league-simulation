@@ -156,3 +156,5 @@ parses my own json file.
 Switch to using standard OCaml with the Jane Street Core library. Reason for
 this is poor standard library in Bucklescript and application is command line
 anyway.
+
+# 9 January 2020
