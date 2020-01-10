@@ -158,3 +158,7 @@ this is poor standard library in Bucklescript and application is command line
 anyway.
 
 # 9 January 2020
+
+# 10 January 2020
+
+Convert it to an OCaml project.

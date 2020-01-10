@@ -1,0 +1,3 @@
+(executable
+    (name sports_league_system)
+    (libraries core))
