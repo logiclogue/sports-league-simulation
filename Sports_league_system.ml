@@ -1,1 +1,4 @@
-Lwt_main.run (Lwt_io.printf "Hello, world!\n")
+open Core
+
+let () =
+    print_endline "Hello, world!"
