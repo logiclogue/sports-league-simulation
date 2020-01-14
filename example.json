@@ -1,0 +1,36 @@
+{
+    "seed": "2018 World Cup",
+    "fixed_ratings": false,
+    "rating_k_factor": 32,
+    "teams": [
+        {
+            "team_name": "England",
+            "rating": 1956,
+            "user_controlled": true
+        },
+        {
+            "team_name": "Tunisia",
+            "rating": 1622,
+            "user_controlled": false
+        },
+        {
+            "team_name": "Belgium",
+            "rating": 2084,
+            "user_controlled": false
+        },
+        {
+            "team_name": "Panama",
+            "rating": 1505,
+            "user_controlled": false
+        }
+    ],
+    "results": [
+        {
+            home_team: "Tunisia",
+            home_result: 1,
+            away_result: 2,
+            away_team: "England"
+        }
+    ],
+    "rounds_simulated": 1
+}
