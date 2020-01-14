@@ -162,3 +162,9 @@ anyway.
 # 10 January 2020
 
 Convert it to an OCaml project.
+
+# 14 January 2020
+
+So I'm trying to use the `Core` library to make a command line application. It's
+failing because for some reason I can't use `[%map_open ]` due to `Let_syntax`
+missing.
