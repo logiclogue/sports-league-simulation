@@ -1,4 +1,4 @@
 (executable
     (name sports_league_system)
     (preprocess (pps ppx_jane))
-    (libraries core))
+    (libraries core async))

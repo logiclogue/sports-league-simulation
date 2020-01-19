@@ -1,4 +1,5 @@
 open Core
+open Async
 
 let command =
     Command.basic
@@ -7,7 +8,14 @@ let command =
             let%map_open filename = Command.Param.anon ("filename" %: string)
             in
             fun () ->
-                print_endline filename
+                let d_contents = Reader.file_contents filename in
+
+                let () = print_endline "start" in
+
+                Deferred.upon d_contents print_endline
         )
 
-let () = Command.run command
+let () =
+    Command.run command;
+
+    never_returns (Scheduler.go ())

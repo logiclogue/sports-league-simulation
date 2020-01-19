@@ -171,3 +171,10 @@ missing.
 
 Now that I've setup the command line, I need to read in a file and parse it as
 JSON.
+
+# 19 January 2020
+
+Open a file. `open_in`. To get an `in_channel`.
+
+Playing around with the `Async` library. Program not terminating after reading
+in the file.
