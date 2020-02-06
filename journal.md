@@ -178,3 +178,7 @@ Open a file. `open_in`. To get an `in_channel`.
 
 Playing around with the `Async` library. Program not terminating after reading
 in the file.
+
+# 6 February 2020
+
+Build issues with `ppx_jane` not being found.
